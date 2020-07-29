@@ -4,7 +4,7 @@ namespace GithubSync.ClientApp.Models
 {
     public class Job
     {
-        public TimeSpan SyncFrequecy { get; set; }
+        public TimeSpan SyncFrequency { get; set; }
 
         public string SourceUrl { get; set; }
 
