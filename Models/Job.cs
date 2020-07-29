@@ -17,5 +17,7 @@ namespace GithubSync.Models
         public string Status { get; set; }
 
         public DateTime LastRun { get; set; }
+
+        public bool Enabled { get; set; }
     }
 }

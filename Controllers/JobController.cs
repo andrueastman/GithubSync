@@ -23,11 +23,9 @@ namespace GithubSync.Controllers
         public async Task<IEnumerable<Job>> GetAsync()
         {
             // deserialize JSON directly from a file
-            using (FileStream fs = System.IO.File.OpenRead("jobs.json"))
-            {
-                var jobs = await JsonSerializer.DeserializeAsync<IEnumerable<Job>>(fs);
-                return jobs;
-            }
+            await using FileStream fs = System.IO.File.OpenRead("jobs.json");
+            var jobs = await JsonSerializer.DeserializeAsync<IEnumerable<Job>>(fs);
+            return jobs;
         }
     }
 }

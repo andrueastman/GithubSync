@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using GithubSync.Models;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -20,16 +24,26 @@ namespace GithubSync.BackgroundJob
         {
             _logger.LogInformation("Timed Hosted Service running.");
 
-            _timer = new Timer(RunJobs, null, TimeSpan.Zero,
+            _timer = new Timer(async state => await RunJobsAsync(), null, TimeSpan.Zero,
                 TimeSpan.FromSeconds(5));
 
             return Task.CompletedTask;
         }
 
-        private void RunJobs(object state)
+        private async Task RunJobsAsync()
         {
             // read the json for jobs list and execute if needed
-
+            await using FileStream fs = File.OpenRead("jobs.json");
+            var jobs = await JsonSerializer.DeserializeAsync<IEnumerable<Job>>(fs);
+            foreach (var job in jobs)
+            {
+                _logger.LogInformation($"Reading job : {job.Name}");
+                _logger.LogInformation($"Enabled : {job.Enabled}");
+                if (job.Enabled)
+                {
+                    _logger.LogInformation("Job completed");
+                }
+            }
             _logger.LogInformation("Period job check completed.");
         }
 
