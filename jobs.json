@@ -3,36 +3,54 @@
     "SyncFrequency": 0,
     "SourceUrl": null,
     "DestinationPath": null,
-    "DestinationRepository": null
+    "DestinationRepository": null,
+    "Name": null,
+    "Status": null,
+    "LastRun": "0001-01-01T00:00:00"
   },
   {
     "SyncFrequency": 0,
     "SourceUrl": null,
     "DestinationPath": null,
-    "DestinationRepository": null
+    "DestinationRepository": null,
+    "Name": null,
+    "Status": null,
+    "LastRun": "0001-01-01T00:00:00"
   },
   {
     "SyncFrequency": 0,
     "SourceUrl": null,
     "DestinationPath": null,
-    "DestinationRepository": null
+    "DestinationRepository": null,
+    "Name": null,
+    "Status": null,
+    "LastRun": "0001-01-01T00:00:00"
   },
   {
     "SyncFrequency": 0,
     "SourceUrl": null,
     "DestinationPath": null,
-    "DestinationRepository": null
+    "DestinationRepository": null,
+    "Name": null,
+    "Status": null,
+    "LastRun": "0001-01-01T00:00:00"
   },
   {
     "SyncFrequency": 0,
     "SourceUrl": null,
     "DestinationPath": null,
-    "DestinationRepository": null
+    "DestinationRepository": null,
+    "Name": null,
+    "Status": null,
+    "LastRun": "0001-01-01T00:00:00"
   },
   {
     "SyncFrequency": 0,
     "SourceUrl": null,
     "DestinationPath": null,
-    "DestinationRepository": null
+    "DestinationRepository": null,
+    "Name": null,
+    "Status": null,
+    "LastRun": "0001-01-01T00:00:00"
   }
 ]
