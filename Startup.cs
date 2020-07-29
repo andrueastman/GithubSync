@@ -1,3 +1,4 @@
+using GithubSync.BackgroundJob;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,8 @@ namespace GithubSync
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddHostedService<GithubSyncHostedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
